@@ -1,9 +1,6 @@
 package vlad;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Владислав on 21.08.2017.
@@ -18,8 +15,10 @@ public class Users {
     private String email;
     private String role;
 
-    public Users(int id, String firstname, String secondname, String login, String password, String email, String role) {
-        this.id = id;
+    public Users() {
+    }
+
+    public Users(String firstname, String secondname, String login, String password, String email, String role) {
         this.firstname = firstname;
         this.secondname = secondname;
         this.login = login;
@@ -29,6 +28,7 @@ public class Users {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
@@ -126,5 +126,18 @@ public class Users {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (role != null ? role.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", secondname='" + secondname + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", role='" + role + '\'' +
+                '}';
     }
 }

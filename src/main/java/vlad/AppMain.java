@@ -2,6 +2,8 @@ package vlad;
 
 import org.hibernate.Session;
 
+import java.util.List;
+
 /**
  * Created by Владислав on 21.08.2017.
  */
@@ -9,13 +11,20 @@ public class AppMain {
     public static void main(String[] args) {
         System.out.println("Hibernate work");
 
-        Session session = HibernateSessionFactory.getSessionFactory().openSession();
-        session.beginTransaction();
+        Users users = new Users("Ragneda","Fedosenko","luchik","ragneda1119","bysia@gmail.com","USER");
 
-        Users users = new Users(2,"Kirill","Tofan","tofanidze","aser2014","tofanidez@gmail.com","USER");
+        UserDAOImpl userDAO = new UserDAOImpl();
+        //userDAO.save(users);
 
-        session.save(users);
-        session.getTransaction().commit();
-        session.close();
+       // Users users1 = userDAO.read(2);
+       // System.out.println(users1);
+
+        //List<Users> list =userDAO.readAll();
+      //  System.out.println(list);
+
+       // userDAO.updateById(3, users);
+       // userDAO.updateRoleById(3,users);
+       // userDAO.remove(1);
+
     }
 }
