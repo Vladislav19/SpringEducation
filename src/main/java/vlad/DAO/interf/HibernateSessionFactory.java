@@ -1,4 +1,4 @@
-package vlad;
+package vlad.DAO.interf;
 
 /**
  * Created by Владислав on 21.08.2017.

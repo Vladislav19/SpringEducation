@@ -1,4 +1,6 @@
-package vlad;
+package vlad.DAO.interf;
+
+import vlad.DAO.model.Users;
 
 import java.util.List;
 

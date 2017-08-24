@@ -1,4 +1,4 @@
-package vlad;
+package vlad.DAO.model;
 
 import javax.persistence.*;
 

@@ -1,7 +1,10 @@
-package vlad;
+package vlad.DAO.implement;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import vlad.DAO.model.Users;
+import vlad.DAO.interf.HibernateSessionFactory;
+import vlad.DAO.interf.UserDAO;
 
 import java.util.List;
 
